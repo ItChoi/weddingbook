@@ -1,7 +1,23 @@
 # 코딩 테스트
 
 # 사용 DB
-1. 게시판 (BOARD)
+1. H2 DB
+   - 디비 초기 생성 (선행 필요)
+     - 저장한 설정: Generic H2 (Server)
+     - 설정 이름: Generic H2 (Server)
+     - 드라이버 클래스: org.h2.Driver
+     - JDBC URL (*): jdbc:h2:~/weddingbook
+     - 사용자명: sa
+     - 비밀번호: 
+   - 생성 후 h2 디비 접속
+     - 저장한 설정: Generic H2 (Server)
+     - 설정 이름: Generic H2 (Server)
+     - 드라이버 클래스: org.h2.Driver
+     - JDBC URL (*): jdbc:h2:tcp://localhost/~/weddingbook
+     - 사용자명: sa
+     - 비밀번호: 
+   
+2. 게시판 (BOARD)
    - id (long) pk (id)
    - title (varchar) (제목)
    - content (text) (내용)
