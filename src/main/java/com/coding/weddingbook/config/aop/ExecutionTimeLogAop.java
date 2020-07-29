@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 public class ExecutionTimeLogAop {
 
     @Around("execution(* com.coding.weddingbook.web.board.*Controller.*(..))")
-    public void executionTimeLog(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object executionTimeLog(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
-        System.out.println("start!!!!!");
-        joinPoint.proceed();
+        Object proceed = joinPoint.proceed();
         long end = System.currentTimeMillis();
-        System.out.println("end!!!!!!!!!");
         log.info("실행 시간: {}초", (end - start) / 1000.0);
+
+        return proceed;
     }
 
 }
